@@ -7,6 +7,12 @@ function scale(imagePath, scaleWidth, scaleHeight)
     for i = 1 : scaleHeight
         for j = 1 : scaleWidth
             pixel = [i / heightScaleRate, j / widthScaleRate];
+            if pixel(1) < 1
+                pixel(1) = 1;
+            end
+            if pixel(2) < 1
+                pixel(2) = 1;
+            end
             y = pixel(1) - floor(pixel(1));
             x = pixel(2) - floor(pixel(2));
             leftTop = [floor(pixel(1)), floor(pixel(2))];
